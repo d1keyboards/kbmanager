@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+
+.env
+node_modules/
+/geoip/*
+
+.monitor
+Makefile
+
+*.sublime-workspace
+dist
+build
+version.json
+*.docker

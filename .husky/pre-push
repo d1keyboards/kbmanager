@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+sh -c "git diff-index --quiet HEAD -- || (echo 'You have some UNSTAGED changes' && exit 1)" && npm run validate

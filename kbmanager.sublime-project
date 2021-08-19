@@ -1,0 +1,34 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.iml",
+				"*.docker"
+			],
+			"folder_exclude_patterns":
+			[
+				"lib",
+				"build",
+				"dist",
+				"node_modules",
+				".idea",
+				".vscode"
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"LSP":
+		{
+			"typescript-language-server":
+			{
+				"enabled": true
+			}
+		},
+		"SublimeLinter.linters.eslint.chdir": "${project}",
+		"SublimeLinter.linters.eslint.disable": false
+	}
+}
