@@ -51,5 +51,6 @@ module.exports = {
 		'react/self-closing-comp': 1,
 		'react/style-prop-object': 2,
 		'react/void-dom-elements-no-children': 2,
+		'@typescript-eslint/no-inferrable-types': 0,
 	},
 }

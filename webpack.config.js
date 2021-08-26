@@ -3,7 +3,7 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-	entry: [path.resolve(__dirname, 'src/app', 'index.tsx')],
+	entry: [path.resolve(__dirname, 'src', 'app', 'index.tsx')],
 	stats: {
 		colors: true,
 	},
@@ -15,7 +15,7 @@ module.exports = {
 		},
 	},
 	output: {
-		filename: 'index.js',
+		filename: 'app/index.js',
 		publicPath: '/',
 	},
 	module: {

@@ -4,8 +4,8 @@ const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
 	const win = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 1024,
+		height: 768,
 		nodeIntegration: false,
 		enableRemoteModule: false,
 		contextIsolation: true,
@@ -17,7 +17,7 @@ const createWindow = () => {
 		},
 	})
 
-	win.loadFile(path.resolve(path.join(__dirname, 'index.html')))
+	win.loadFile(path.resolve(path.join(__dirname, 'app/index.html')))
 }
 
 app.whenReady().then(() => {

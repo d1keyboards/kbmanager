@@ -1,15 +1,7 @@
 import ReactDOM from 'react-dom'
-import { Global } from '@emotion/react'
-import { global } from '~/ui/style'
-import Main from '~/ui/main'
+import Main from '~/main'
 
-const App = () => (
-	<div>
-		<Global styles={global} />
-		<Main />
-		<div>Hopsa 11</div>
-	</div>
-)
+const App = () => <Main />
 
 const domContainer = document.getElementById('main')
 
