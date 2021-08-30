@@ -20,7 +20,7 @@ const LayerButton = styled.div<{ layer: number }>(
 		position: absolute;
 		left: 0;
 		cursor: pointer;
-		transition: 0.3s ease-out;
+		transition: var(--transition-button);
 		:before {
 			content: '${props.layer}';
 			position: absolute;

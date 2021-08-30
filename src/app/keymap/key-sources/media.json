@@ -1,0 +1,26 @@
+{
+	"width": 4,
+	"height": 5,
+	"layout": [
+		{ "gridX": 0, "gridY": 0, "label": "Num\nLock", "x": 0, "y": 0 },
+		{ "gridX": 1, "gridY": 0, "label": "/", "x": 1, "y": 0 },
+		{ "gridX": 2, "gridY": 0, "label": "*", "x": 2, "y": 0 },
+		{ "gridX": 3, "gridY": 1, "label": "-", "x": 3, "y": 0 },
+		{ "gridX": 0, "gridY": 1, "label": "7", "x": 0, "y": 1 },
+		{ "gridX": 1, "gridY": 1, "label": "8", "x": 1, "y": 1 },
+		{ "gridX": 2, "gridY": 1, "label": "9", "x": 2, "y": 1 },
+
+		{ "gridX": 0, "gridY": 2, "label": "4", "x": 0, "y": 2 },
+		{ "gridX": 1, "gridY": 2, "label": "5", "x": 1, "y": 2 },
+		{ "gridX": 2, "gridY": 2, "label": "6", "x": 2, "y": 2 },
+		{ "gridX": 3, "gridY": 2, "label": "+", "x": 3, "y": 1, "height": 2 },
+
+		{ "gridX": 0, "gridY": 3, "label": "1", "x": 0, "y": 3 },
+		{ "gridX": 1, "gridY": 3, "label": "2", "x": 1, "y": 3 },
+		{ "gridX": 2, "gridY": 3, "label": "3", "x": 2, "y": 3 },
+
+		{ "gridX": 0, "gridY": 4, "label": "0", "x": 0, "y": 4, "width": 2 },
+		{ "gridX": 2, "gridY": 4, "label": ".", "x": 2, "y": 4 },
+		{ "gridX": 3, "gridY": 4, "label": "Enter", "x": 3, "y": 3, "height": 2 }
+	]
+}

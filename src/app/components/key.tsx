@@ -11,8 +11,10 @@ const KeyCap = styled.div(
 		border: 1px solid #aaa;
 		border-radius: 4px;
 		background-color: #ccc;
+		white-space: pre;
 		position: relative;
 		cursor: pointer;
+		line-height: 1;
 		opacity: ${props.unfocused ? 0.4 : 1};
 		transition: 0.2s ease-out;
 		:after {
@@ -48,8 +50,19 @@ type Props = {
 	label?: string
 	w?: number
 	h?: number
+	keySize?: number
+	color?: string
+	textColor?: string
 }
-export const Key: React.FC<Props> = ({ label, w, h, unfocused, onClick }) => (
+export const Key: React.FC<Props> = ({
+	label,
+	w,
+	h,
+	color,
+	textColor,
+	unfocused,
+	onClick,
+}) => (
 	<KeyCap w={w || 1} h={h || 1} unfocused={unfocused} onClick={onClick}>
 		<KeyLegend>{label}</KeyLegend>
 	</KeyCap>

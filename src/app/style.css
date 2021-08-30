@@ -5,6 +5,7 @@
 	--color-4: #efe9aeff;
 	--color-5: #cdeac0ff;
 	--color-accent: var(--color-1);
+	--transition-button: 0.2s ease-out;
 }
 
 body {
