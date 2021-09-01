@@ -17,14 +17,14 @@ const connect = (path: HIDPath): HIDAdapter => {
 	return new HIDAdapter(device)
 }
 
-type HIDDeviceInfo = {
+export type HIDDeviceInfo = {
 	vendorId: number
 	productId: number
 	manufacturer?: string
 	product?: string
 	serialNumber?: string
 }
-class HIDAdapter {
+export class HIDAdapter {
 	public info: HIDDeviceInfo
 
 	private _hidDevice: HID.HID
@@ -48,6 +48,10 @@ class HIDAdapter {
 
 	receiveSync(): number[] {
 		return this._hidDevice.readSync()
+	}
+
+	close(): void {
+		this._hidDevice.close()
 	}
 }
 

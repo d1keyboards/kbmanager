@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { KeyDescriptor } from '~/models'
 import KeyboardLayout from './keyboard-layout'
@@ -22,6 +22,14 @@ const PanelPickerContainer = styled.div`
 
 export const KeymapEditor: React.FC = () => {
 	const [selected, setSelected] = useState<KeyDescriptor>()
+
+	useEffect(() => {
+		console.warn('hehehe')
+		const electron = (window as any).electron
+		electron.on('hopsa', (...args: any[]) =>
+			console.warn('HOPSA jest', ...args)
+		)
+	}, [])
 
 	const toggleFocus = useCallback(
 		(key: KeyDescriptor) => {
