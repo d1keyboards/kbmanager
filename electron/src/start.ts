@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path')
-const { app, BrowserWindow } = require('electron')
+import path from 'path'
+import { app, BrowserWindow } from 'electron'
 
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 1024,
 		height: 768,
-		nodeIntegration: false,
-		enableRemoteModule: false,
-		contextIsolation: true,
-		nodeIntegrationInWorker: false,
-		nodeIntegrationInSubFrames: false,
+		// nodeIntegration: false,
+		// enableRemoteModule: false,
+		// contextIsolation: true,
+		// nodeIntegrationInWorker: false,
+		// nodeIntegrationInSubFrames: false,
 		webPreferences: {
 			preload: path.resolve(path.join(__dirname, 'preload.js')),
 			devTools: !app.isPackaged,

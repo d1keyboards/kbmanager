@@ -5,9 +5,9 @@ import KeyboardLayout from './keyboard-layout'
 import { KeymapPanelPicker } from './keymap-panel-picker'
 import { KeymapConfigPanel } from './keymap-config-panel'
 import * as viaAdapter from '~/keyboards/via-adapter'
-import crkbd from '~/../keyboards/crkbd.json'
+import kbSpec from '~keyboards/niu_mini.json'
 
-const keyboard = viaAdapter.parse(crkbd)
+const keyboard = viaAdapter.parse(kbSpec)
 
 const Container = styled.div`
 	display: flex;

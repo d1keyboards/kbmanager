@@ -1,21 +1,23 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-	entry: [path.resolve(__dirname, 'src', 'app', 'index.tsx')],
+	entry: [path.resolve(__dirname, 'src', 'index.tsx')],
 	stats: {
 		colors: true,
 	},
 	resolve: {
 		extensions: ['.js', '.ts', '.tsx', '.json', '.messages'],
 		alias: {
-			'~': path.resolve('src/app'),
-			assets: path.resolve('assets'),
+			'~': path.resolve(__dirname, 'src'),
+			'~assets': path.resolve(__dirname, 'assets'),
+			'~keyboards': path.resolve(__dirname, '..', 'keyboards'),
 		},
 	},
 	output: {
-		filename: 'app/index.js',
+		filename: 'index.js',
 		publicPath: '/',
 	},
 	module: {
@@ -62,12 +64,12 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{
-					context: 'src/',
+					context: path.resolve(__dirname, 'src/'),
 					from: '**',
 					globOptions: {
 						dot: true,
 						gitignore: true,
-						ignore: ['**/*.ts', '**/*.tsx'],
+						ignore: ['**/*.ts', '**/*.tsx', '**/*.json'],
 					},
 				},
 			],

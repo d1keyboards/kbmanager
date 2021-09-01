@@ -5,13 +5,14 @@
 	"license": "GPL3",
 	"private": false,
 	"scripts": {
-		"start": "concurrently -k npm:webpack npm:electron",
-		"eslint": "eslint ./src",
-		"electron": "wait-on build/start.js && electron build/start.js",
-		"tsc": "tsc --noEmit -p ./tsconfig.json",
-		"webpack": "webpack --config webpack.dev.js -o build/ --watch",
-		"validate": "concurrently npm:tsc npm:eslint npm:test:ci",
-		"fix": "eslint ./src --fix",
+		"start": "concurrently -k npm:watch:app npm:watch:electron npm:start:electron",
+		"eslint": "eslint ./app ./electron",
+		"start:electron": "wait-on build/start.js && wait-on build/app/index.js && electron build/start.js",
+		"tsc:app": "tsc --noEmit -p ./app/tsconfig.json",
+		"tsc:electron": "tsc --noEmit -p ./electron/tsconfig.json",
+		"watch:app": "webpack --config app/webpack.dev.js -o build/app --watch",
+		"watch:electron": "tsc --outDir build -p ./electron/tsconfig.json --watch",
+		"validate": "concurrently npm:tsc:app npm:tsc:electron npm:eslint npm:test:ci",
 		"version": "mkdir -p public && echo \"{ \\\"version\\\": \\\"$(git describe --tags)\\\" }\" > public/version.json",
 		"prepare": "husky install",
 		"postinstall": "electron-rebuild",
@@ -24,7 +25,8 @@
 	"jest": {
 		"moduleDirectories": [
 			"node_modules",
-			"src"
+			"app/src",
+			"electron/src"
 		],
 		"moduleFileExtensions": [
 			"js",
@@ -49,6 +51,7 @@
 		"@emotion/eslint-plugin": "^11.2.0",
 		"@emotion/jest": "^11.3.0",
 		"@types/lodash": "^4.14.172",
+		"@types/node-hid": "^1.3.1",
 		"@types/react": "^17.0.19",
 		"@types/react-dom": "^17.0.9",
 		"@types/react-redux": "^7.1.18",
